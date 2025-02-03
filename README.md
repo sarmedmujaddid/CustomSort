@@ -46,14 +46,14 @@ alphanumeric-sort/
 
 ```bash
 
-git clone https://github.com/your-username/alphanumeric-sort.git
-cd alphanumeric-sort
+git clone https://github.com/sarmedmujaddid/CustomSort.git
+cd CustomSort
 ```
 
 #### 3️⃣ Run the Script
 
 ```bash
-python custom_sort.py
+python CustomSort.py
 ```
 
 
@@ -72,11 +72,12 @@ Output: 411aA
 import re
 
 def custom_sort(string):
-    # Extract consecutive numbers as whole numeric values
+    # Extract numbers as whole values and sort them
     numbers = re.findall(r'\d+', string)
     numbers = sorted(numbers, key=int)
 
-    # Sort lowercase, uppercase, and special characters separately
+    #Extract and sort lowercase, uppercase, and other special characters separately
+
     lowercase = sorted([ch for ch in string if ch.islower()])
     uppercase = sorted([ch for ch in string if ch.isupper()])
     others = sorted([ch for ch in string if not ch.isalnum()])
@@ -85,9 +86,10 @@ def custom_sort(string):
     return "".join(map(str, numbers) + lowercase + uppercase + others)
 
 # User input from terminal
-input_str = input("Enter input: ")
+#input_str = "A11a4"
+input_str = input("Enter Input: ")
 output_str = custom_sort(input_str)
-print(output_str)
+print(f"Output: {output_str}")
 
 ```
 
