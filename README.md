@@ -83,7 +83,8 @@ def custom_sort(string):
     others = sorted([ch for ch in string if not ch.isalnum()])
 
     # Combine sorted groups into the final string
-    return "".join(map(str, numbers) + lowercase + uppercase + others)
+    return "".join(numbers + lowercase + uppercase + others)
+
 
 # User input from terminal
 #input_str = "A11a4"
